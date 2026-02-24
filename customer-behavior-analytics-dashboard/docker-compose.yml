@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: cba_postgres
+    environment:
+      POSTGRES_USER: cba_user
+      POSTGRES_PASSWORD: cba_pass
+      POSTGRES_DB: cba_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - cba_pgdata:/var/lib/postgresql/data
+volumes:
+  cba_pgdata:
